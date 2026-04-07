@@ -1,24 +1,36 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <title>Download</title>
+  <meta charset="UTF-8">
+  <title>Carregando...</title>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const produto = params.get("produto");
+
+    let link = "";
+
+    if(produto == "1"){
+      link = "SEU_LINK_PRODUTO_1";
+    } 
+    else if(produto == "2"){
+      link = "SEU_LINK_PRODUTO_2";
+    } 
+    else if(produto == "3"){
+      link = "SEU_LINK_PRODUTO_3";
+    } 
+    else {
+      link = "SEU_LINK_PADRAO";
+    }
+
+    setTimeout(function(){
+      window.location.href = link;
+    }, 5000);
+  </script>
+
 </head>
-<body>
-
-<h2>🔓 Clique para liberar o download</h2>
-
-<button onclick="liberar()">Liberar Download</button>
-
-<script>
-function liberar() {
-    window.open("SEU_LINK_DSR_AQUI", "_blank");
-
-    setTimeout(() => {
-        window.location.href = "SEU_VIDEO.mp4";
-    }, 3000);
-}
-</script>
-
+<body style="text-align:center; font-family: Arial;">
+  <h2>🔴 Aguarde... liberando conteúdo</h2>
+  <p>Você será redirecionado em alguns segundos...</p>
 </body>
 </html>
