@@ -1,4 +1,3 @@
-
 const links = {
   "1": "https://SEU_LINK_AFILIADO_1",
   "2": "https://SEU_LINK_AFILIADO_2",
