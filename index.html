@@ -4,24 +4,13 @@
   <meta charset="UTF-8">
   <title>Carregando...</title>
 
+  <script src="links.js"></script>
+
   <script>
     const params = new URLSearchParams(window.location.search);
-    const produto = params.get("produto");
+    const produto = params.get("p");
 
-    let link = "";
-
-    if(produto == "1"){
-      link = "SEU_LINK_PRODUTO_1";
-    } 
-    else if(produto == "2"){
-      link = "SEU_LINK_PRODUTO_2";
-    } 
-    else if(produto == "3"){
-      link = "SEU_LINK_PRODUTO_3";
-    } 
-    else {
-      link = "SEU_LINK_PADRAO";
-    }
+    let link = links[produto] || "https://SEU_LINK_PADRAO";
 
     setTimeout(function(){
       window.location.href = link;
@@ -31,6 +20,13 @@
 </head>
 <body style="text-align:center; font-family: Arial;">
   <h2>🔴 Aguarde... liberando conteúdo</h2>
-  <p>Você será redirecionado em alguns segundos...</p>
+  <p>Preparando seu acesso...</p>
+
+  <p>Se não redirecionar, <a id="manualLink" href="#">clique aqui</a></p>
+
+  <script>
+    document.getElementById("manualLink").href = link;
+  </script>
+
 </body>
 </html>
